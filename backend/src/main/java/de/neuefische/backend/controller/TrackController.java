@@ -1,6 +1,5 @@
 package de.neuefische.backend.controller;
 
-import de.neuefische.backend.model.NewTrack;
 import de.neuefische.backend.model.Track;
 import de.neuefische.backend.service.TrackService;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +20,7 @@ public class TrackController {
 
     @PostMapping("/add-track")
     @ResponseStatus(HttpStatus.CREATED)
-    Track postTrack(@RequestBody NewTrack newTrack) {
+    Track postTrack(@RequestBody Track newTrack) {
         return trackService.saveTrack(newTrack);
     }
 }

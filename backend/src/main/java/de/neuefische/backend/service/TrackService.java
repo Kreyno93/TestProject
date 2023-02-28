@@ -1,6 +1,5 @@
 package de.neuefische.backend.service;
 
-import de.neuefische.backend.model.NewTrack;
 import de.neuefische.backend.model.Track;
 import de.neuefische.backend.repo.TrackRepo;
 import lombok.RequiredArgsConstructor;
@@ -13,12 +12,8 @@ public class TrackService {
     private final TrackRepo trackRepo;
     private final UUIDService uuidService;
 
-    public Track saveTrack(NewTrack newTrack) {
-        Track track = Track.builder()
-                .trackName(newTrack.getTrackName())
-                .id(uuidService.generateUUID())
-                .build();
-        return trackRepo.save(track);
+    public Track saveTrack(Track newTrack) {
+        return trackRepo.save(newTrack.withId(uuidService.generateUUID()));
     }
 
     public Iterable<Track> listTracks() {

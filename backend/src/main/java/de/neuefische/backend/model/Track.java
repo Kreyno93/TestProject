@@ -1,9 +1,6 @@
 package de.neuefische.backend.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 
 @Builder
@@ -12,6 +9,7 @@ import org.springframework.data.annotation.Id;
 @NoArgsConstructor
 public class Track {
     @Id
+    @With
     private String id;
     private String trackName;
 }
