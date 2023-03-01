@@ -1,14 +1,14 @@
 import './App.css'
+import {Track} from "./model/Track";
+import {useEffect, useState} from "react";
+import axios from "axios";
 import {Route, Routes} from "react-router-dom";
 import Home from "./components/Home";
 import TrackGallery from "./components/TrackGallery";
-import React, {useEffect} from "react";
-import {Track} from "./model/Track";
-import axios from "axios";
 
 function App() {
 
-    const [tracks, setTracks] = React.useState<Track[]>([]);
+    const [tracks, setTracks] = useState<Track[]>([]);
 
     function getAllTracks() {
         axios.get("/api/tracks")

@@ -2,7 +2,8 @@ import React from 'react';
 import {Track} from "../model/Track";
 import TrackCard from "./TrackCard";
 import AddTrack from "./AddTrack";
-import axios from "axios";
+import MapAPI from "./MapAPI";
+import '../styling/TrackGallery.css'
 
 type Props = {
     tracks: Track[]
@@ -10,7 +11,6 @@ type Props = {
 }
 
 function TrackGallery(props: Props) {
-
 
     return (
         <>
@@ -23,9 +23,10 @@ function TrackGallery(props: Props) {
             </li>
         </ul>
     </nav>
-            <div>
-                {props.tracks.map(track => <TrackCard track={track}/>)}
+            <div className={"gallery-wrapper"}>
+                {props.tracks.map(track => <TrackCard track={track} key={track.id}/>)}
             </div>
+            <MapAPI/>
         </>
     );
 }
