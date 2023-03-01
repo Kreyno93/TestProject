@@ -1,6 +1,5 @@
 import React from 'react';
 import BingMapsReact from "bingmaps-react";
-
 function MapApi() {
     const pushPin = {
         center: {
@@ -11,11 +10,10 @@ function MapApi() {
             title: "Dönerbude!!",
         },
     }
-
     return (
 
         <div>
-            <BingMapsReact bingMapsKey="AozSPC4DDD2jhEB0hh8nIMx130qiO1lBUrXpQiJpA6b3fDlNgfhN3pYQ_2UU0Qx9"
+            <BingMapsReact bingMapsKey ={process.env.REACT_APP_BING_MAPS_API_KEY}
                            height="100rem"
                            mapOptions={{
                                navigationBarMode: "square",
@@ -23,6 +21,7 @@ function MapApi() {
                            width="100%"
                            viewOptions={{
                                center: {latitude: 42.360081, longitude: -71.058884},
+                               mapTypeId: "canvasDark",
                            }}
                            pushPins={[pushPin]}
             />
