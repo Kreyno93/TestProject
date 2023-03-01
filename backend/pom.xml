@@ -55,8 +55,6 @@
                         <exclude>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
-<!--                            <sonar.sources>src/main/java</sonar.sources>-->
-<!--                            <sonar.exclusions>file:backend/src/main/java/de/neuefische/config/*_.*</sonar.exclusions>-->
                         </exclude>
                     </excludes>
                 </configuration>
